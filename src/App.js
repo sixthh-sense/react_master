@@ -11,7 +11,7 @@ export default function App() {
             {
                 products.map((product, i) => {
                     return (
-                        <li key={i}>{product}</li>
+                        <li key={i.toString()}>{product}</li>
                     )
                 })
             }
