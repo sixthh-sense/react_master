@@ -5,6 +5,14 @@ export default function App() {
 
     const [i, setCount] = useState(0);
 
+    const addValue = () => {
+        setCount(i + 1);
+    }
+
+    const decrementValue = () => {
+        setCount(i - 1);
+    }
+
     const changeCounter = (op) => {
         if (op === '+') {
             setCount(i + 1);
@@ -16,8 +24,8 @@ export default function App() {
     return (
         <div className="App">
             <h1>{i}</h1>
-            <button onClick={() => changeCounter('+')}>Increment</button>
-            <button onClick={() => changeCounter('-')}>Decrement</button>
+            <button onClick={addValue}>Increment</button>
+            <button onClick={decrementValue}>Decrement</button>
         </div>
     );
 }
