@@ -11,16 +11,20 @@ export default function App() {
     ];
     const [products, setProducts] = useState(temp);
 
+    let productList = (
+        products.map((product, i) => {
+            return (
+                <ListItem key={product.id} pName={product.pName}/>
+            )
+        })
+    );
+
     // whenever using the map() method, make sure the key attribute is "unique"
     // BEWARE: index is NOT a stable identity for every item
     return (
         <div className="App">
             {
-                products.map((product, i) => {
-                    return (
-                        <ListItem key={product.id} pName={product.pName}/>
-                    )
-                })
+                productList
             }
         </div>
     );
