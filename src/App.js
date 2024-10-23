@@ -1,15 +1,15 @@
+import React from "react";
 import "./css/styles.css";
-import DemoComponent from "./components/DemoComponent";
 
 export default function App() {
-    // props obj receives attributes as properties & content as a single property (ex) children
+
+    const getData = () => {
+        console.log("Function called");
+    }
+
     return (
         <div className="App">
-            <DemoComponent value={5}>
-                <div>
-                    <input type="text"/>
-                </div>
-            </DemoComponent>
+            <button onClick={() => getData()}>Get Data</button>
         </div>
     )
 }
