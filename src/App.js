@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./css/styles.css";
+import ListItem from "./components/ListItem";
 
 export default function App() {
     const temp = [
@@ -17,7 +18,7 @@ export default function App() {
             {
                 products.map((product, i) => {
                     return (
-                        <li key={product.id.toString()}>{product.pName}</li>
+                        <ListItem key={product.id} pName={product.pName}/>
                     )
                 })
             }
