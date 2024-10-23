@@ -3,9 +3,9 @@ const DemoComponent = (props) => {
     return(
         <div>
             <p>Demo Component</p>
-            {JSON.stringify(props)}
+            {props.children}
             <hr/>
-            <h2>Value:- {props.pCode} - {props.pName}</h2>
+            <h2>Value:- {props.value}</h2>
         </div>
     )
 }

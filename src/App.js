@@ -2,16 +2,14 @@ import "./css/styles.css";
 import DemoComponent from "./components/DemoComponent";
 
 export default function App() {
-
-    const product = {
-        pCode: 1001,
-        pName: 'Apple'
-    }
-
+    // props obj receives attributes as properties & content as a single property (ex) children
     return (
         <div className="App">
-            <DemoComponent
-                {...product}/>
+            <DemoComponent value={5}>
+                <div>
+                    <input type="text"/>
+                </div>
+            </DemoComponent>
         </div>
     )
 }
