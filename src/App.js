@@ -1,34 +1,21 @@
-import "./css/styles.css";
-import HeaderC from "./layouts/HeaderC";
-import FooterC from "./layouts/FooterC";
-import DisplayCounter from "./contents/DisplayCounter";
-import DisplayFlag from "./contents/DisplayFlag";
-import ChangeState from "./actions/ChangeState";
-import React, {useState, useCallback} from "react";
+import "./App.css";
+import React, {useState} from "react";
 
 export default function App() {
 
-    // counter
-    const [cnt, setCount] = useState(0);
-    // boolean state
-    const [mFlag, setFlag] = useState(true);
+    // if u wanna make react watch something changing, u have to make it a 'state' variable(just variables doesn't show changes)
+    // useState() always returns one array with two elements
+    // the array's 2nd element: function which is going to change the value of the 1st element
+    const [i, setCount] = useState(0);// 1. value which we have given of the state(Number, Boolean, String, Array, Object literal etc...)
+    const addValue=() => {
+        setCount(i + 1);
+        console.log(i);
+    }
 
-    let changeCnt = useCallback(() => {
-        setCount(cnt + 1);
-    }, [cnt]);
-
-    let changeFlag = useCallback(() => {
-        setFlag(!mFlag);
-    }, [mFlag]);
-
-  return (
-      <div className="App">
-          <HeaderC/>
-            <DisplayCounter counter={cnt}/>
-            <DisplayFlag flag={mFlag}/>
-            <ChangeState caption="Change Cnt" click={changeCnt}/>
-            <ChangeState caption="Change Flag" click={changeFlag}/>
-          <FooterC/>
-      </div>
-  );
+    return (
+        <div className="App">
+            <h1>{i}</h1>
+            <button onClick={addValue}>Increment</button>
+        </div>
+    );
 }
