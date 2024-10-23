@@ -5,7 +5,7 @@ const DemoComponent = (props) => {
             <p>Demo Component</p>
             {JSON.stringify(props)}
             <hr/>
-            <h2>Value:- {props.value.toString()}</h2>
+            <h2>Value:- {props.pCode} - {props.pName}</h2>
         </div>
     )
 }
